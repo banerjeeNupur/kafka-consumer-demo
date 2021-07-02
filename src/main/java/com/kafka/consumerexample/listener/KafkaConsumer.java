@@ -7,11 +7,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaConsumer {
 
-
-//    group = "group_json"
-    @KafkaListener(topics = "Kafka_Example_json",
+    @KafkaListener(topics = "test",
             containerFactory = "userKafkaListenerFactory")
     public void consumeJson(User user) {
-        System.out.println("Consumed JSON Message: " + user);
+        System.out.println("Consumed JSON Message: " + user.toString()+"\n"+user.getDept()+"\n"+user.getName());
     }
 }

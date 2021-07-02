@@ -1,9 +1,12 @@
 package com.kafka.consumerexample.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+@JsonDeserialize
 public class User {
 
     private String name;
-    private String dept;
+    private String department;
 
     public String getName() {
         return name;
@@ -14,11 +17,11 @@ public class User {
     }
 
     public String getDept() {
-        return dept;
+        return department;
     }
 
     public void setDept(String dept) {
-        this.dept = dept;
+        this.department = dept;
     }
 
     public User() {
@@ -27,14 +30,14 @@ public class User {
     public User(String name, String dept) {
 
         this.name = name;
-        this.dept = dept;
+        this.department = dept;
     }
 
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("User{");
         sb.append("name='").append(name).append('\'');
-        sb.append(", dept='").append(dept).append('\'');
+        sb.append(", dept='").append(department).append('\'');
         sb.append('}');
         return sb.toString();
     }
